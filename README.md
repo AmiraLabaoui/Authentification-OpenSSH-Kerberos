@@ -95,7 +95,7 @@ Dans la machine KDC exécutez la commande suivante pour générer le fichier key
    $ ktutil 
    ktutil:  add_entry -password -p 
    ktutil:  wkt kdm5.keytab
-   ![Image](C:\Users\Amira\Downloads\Kerberos\c21 creation de keytab.png)
+  ![Image](https://github.com/AmiraLabaoui/Authentification-OpenSSH-Kerberos/blob/main/c21%20creation%20de%20keytab.png)
    Envoyez le fichier keytab de la machine KDC à la machine du serveur de service :
 Dans la machine serveur Postgres créez les répertoires suivants :
 
@@ -104,7 +104,7 @@ mkdir -p /home/kdm5/data
 Dans la machine KDC, envoyez le fichier keytab au serveur kdm5 :
 
 ! Nous avons besoin d'avoir le paquet openssh-server installé sur le serveur de service : sudo apt-get install openssh-server.
-[Image](C:\Users\Amira\Downloads\Kerberos\c16 database varlib ....png)
+![Image](https://github.com/AmiraLabaoui/Authentification-OpenSSH-Kerberos/blob/main/c16%20database%20varlib%20....png)
 
 Vérifiez que le principal du service a bien été extrait de la base de données KDC :
 
@@ -119,5 +119,4 @@ ktutil:  read_kt pgsql/data/kdm5.keytab
 Lister à nouveau la liste de clés actuelle
 
 ktutil:  list
-[Image](C:\Users\Amira\Downloads\Kerberos\c23 kerberos et openssh.png)
-https://www.youtube.com/watch?v=vx2vIA2Ym14
+[Image](https://github.com/AmiraLabaoui/Authentification-OpenSSH-Kerberos/blob/main/c23%20kerberos%20et%20openssh.png)
