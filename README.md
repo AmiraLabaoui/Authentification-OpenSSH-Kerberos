@@ -59,7 +59,7 @@ Lors de l'installation, il nous sera demandé la configuration de :
 *le serveur d'administration : 'kdc.universitecentrale.tn'
 ![Image](https://user-images.githubusercontent.com/100439283/236916126-7ff72edd-e6c1-45b7-ba83-61f6b3af5874.png)
 ![Image](https://user-images.githubusercontent.com/100439283/236916127-c398b81d-9706-4ef5-9402-85d671a8d213.png)
-### Le domaine est un réseau logique, similaire à un domaine, auquel appartiennent tous les utilisateurs et serveurs partageant la même base de données Kerberos. 
+## Le domaine est un réseau logique, similaire à un domaine, auquel appartiennent tous les utilisateurs et serveurs partageant la même base de données Kerberos. 
 La clé principale de cette base de données KDC doit être définie une fois l'installation terminée :
 sudo krb5_newrealm 
 ![Image](https://user-images.githubusercontent.com/100439283/236917104-faedc780-db8b-4755-aa65-4db023877eb6.png)
@@ -72,15 +72,15 @@ sudo vi /etc/krb5kdc/kadm5.acl
 Dans ce fichier, nous devons ajouter la ligne suivante :
 */admin@UNIVERSITECENTRALE.TN    *
 ![Image](https://user-images.githubusercontent.com/100439283/236923548-3c2dc2c4-c5e0-43fb-a51d-fb95f8463197.png)
-# Créer un principal pour le client  $ sudo kadmin.local    kadmin.local:  add_principal utilisateur
+## Créer un principal pour le client  $ sudo kadmin.local    kadmin.local:  add_principal utilisateur
 ![Image](https://user-images.githubusercontent.com/100439283/236925113-09129c14-70dd-4e17-b9b6-e4467239605d.png)
-# Créer un principal pour le serveur de service
+## Créer un principal pour le serveur de service
 ![Image](https://user-images.githubusercontent.com/100439283/236925603-373de20b-97de-4420-b726-351b7a272e0b.png)
 Nous pouvons vérifier la liste des principaux en exécutant la commande :kadmin.local: list_principals
 ![Image](https://user-images.githubusercontent.com/100439283/236926040-0281b9c2-1929-49a4-8022-8233a36ca858.png)
 # Configuration de la machine du serveur de service
 ## Configuration de Kerberos
-### Installation de packages
+## Installation de packages
 Voici les packages qui doivent être installés sur la machine du serveur de service :
 $ sudo apt-get update
 $ sudo apt-get install krb5-user libpam-krb5 libpam-ccreds
@@ -88,7 +88,7 @@ Lors de l'installation, il nous sera demandé la configuration de :
 * le domaine : 'UNIVERSITECENTRALE.TN' (doit être tout en majuscule )
 * le serveur Kerberos : 'kdc.universitecentrale.tn'
 * le serveur d'administration : 'kdc.universitecentrale.tn'  
-### Préparation du fichier keytab
+## Préparation du fichier keytab
 Nous devons extraire le principal du service de la base de données des principaux KDC dans un fichier keytab.
 
 Dans la machine KDC exécutez la commande suivante pour générer le fichier keytab dans le dossier courant :
