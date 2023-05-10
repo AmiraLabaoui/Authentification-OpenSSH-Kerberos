@@ -88,5 +88,36 @@ Lors de l'installation, il nous sera demandé la configuration de :
 * le domaine : 'UNIVERSITECENTRALE.TN' (doit être tout en majuscule )
 * le serveur Kerberos : 'kdc.universitecentrale.tn'
 * le serveur d'administration : 'kdc.universitecentrale.tn'  
-### Préparation du fichier 
-Nous devons extraire le principal du service de la base
+### Préparation du fichier keytab
+Nous devons extraire le principal du service de la base de données des principaux KDC dans un fichier keytab.
+
+Dans la machine KDC exécutez la commande suivante pour générer le fichier keytab dans le dossier courant :
+   $ ktutil 
+   ktutil:  add_entry -password -p 
+   ktutil:  wkt kdm5.keytab
+   ![Image](C:\Users\Amira\Downloads\Kerberos\c21 creation de keytab.png)
+   Envoyez le fichier keytab de la machine KDC à la machine du serveur de service :
+Dans la machine serveur Postgres créez les répertoires suivants :
+
+mkdir -p /home/kdm5/data
+
+Dans la machine KDC, envoyez le fichier keytab au serveur kdm5 :
+
+! Nous avons besoin d'avoir le paquet openssh-server installé sur le serveur de service : sudo apt-get install openssh-server.
+[Image](C:\Users\Amira\Downloads\Kerberos\c16 database varlib ....png)
+
+Vérifiez que le principal du service a bien été extrait de la base de données KDC :
+
+Lister la liste de clés actuelle
+
+ktutil:  list
+
+Lire un keytab krb5 dans la liste de clés actuelle
+
+ktutil:  read_kt pgsql/data/kdm5.keytab
+
+Lister à nouveau la liste de clés actuelle
+
+ktutil:  list
+[Image](C:\Users\Amira\Downloads\Kerberos\c23 kerberos et openssh.png)
+https://www.youtube.com/watch?v=vx2vIA2Ym14
