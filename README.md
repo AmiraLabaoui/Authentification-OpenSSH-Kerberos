@@ -119,4 +119,5 @@ ktutil:  read_kt pgsql/data/kdm5.keytab
 Lister à nouveau la liste de clés actuelle
 
 ktutil:  list
-[Image](https://github.com/AmiraLabaoui/Authentification-OpenSSH-Kerberos/blob/main/c23%20kerberos%20et%20openssh.png)
+
+![Image](https://github.com/AmiraLabaoui/Authentification-OpenSSH-Kerberos/blob/main/c23%20kerberos%20et%20openssh.png)
